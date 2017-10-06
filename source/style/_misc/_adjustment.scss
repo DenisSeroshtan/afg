@@ -1,0 +1,100 @@
+@mixin default-font {
+	font-family: ralewayregular, sans-serif;
+}
+$color-link: #fff;
+//style
+html{
+	@include reset; //reset style of smartgrid
+	box-sizing: border-box;
+	font-size: 16px;
+	@include md-block {
+		font-size: 15px;
+	}
+
+	@include sm-block {
+		font-size: 15px;
+	}
+
+	@include xs-block {
+		font-size: 14px;
+	}
+
+	@include xxs-block {
+		font-size: 13px;
+	}
+}
+
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+body {
+	@include default-font;
+	line-height: 1.75;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	position: relative;
+	min-width: 320px;
+}
+.container{
+	@include wrapper;
+}
+
+li {
+	list-style: none;
+}
+
+ul, p {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: $color-link;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.4;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin: 0;
+}
+//reset input
+input,
+label,
+select,
+button,
+textarea
+{
+	margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+	font-size:13px;
+	@include default-font;
+
+}
+
+button, input:focus, select:focus {
+	outline:0;
+}
+

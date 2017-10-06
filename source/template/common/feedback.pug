@@ -1,0 +1,26 @@
+section(style= inlineImg.feedback_bg).section__feedback
+	.feedback__right
+		.container
+			.feedback__wrap
+				.success
+					span Ваша заявка принята!
+				+titleLogo
+				.s-title.s-title_white ОСТАВИТЬ ЗАЯВКУ
+				.feedback__text
+					| Оставьте заявку и мы перезвоним вам в течение 15 минут.
+				form.form
+					.form__group
+						input(name="name"
+							type="text"
+							placeholder="Ваше имя..."
+							).input__name
+					.form__group
+						input(name="phone"
+							type="text"
+							placeholder="Ваш телефон"
+							).input__phone
+					.form__group
+						select(name="услуга" class="select" required)
+							option
+							+menuNav("option")
+					+Btn("отправить", "btn_white")

@@ -1,0 +1,9 @@
+section(style= inlineImg.partners_bg).partners
+	.container
+		h2.s-title.partners__title наши партнеры
+		.partners__slider.owl-carousel
+			-for (var i=1; i<=4; i++)
+				.partners__pic
+					img(src=`assets/img/partners/brend${i}.png`
+						alt="brand"
+						class="brand__img")

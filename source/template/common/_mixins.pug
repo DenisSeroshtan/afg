@@ -1,0 +1,84 @@
+mixin preloader
+	.preloader
+		.pulse
+
+mixin logoSvg
+	.header-top__logo
+		a(href="/").header-top__logo-link
+			img(src="assets/img/logo-1.svg"
+				alt="салон красоты smitler" ).header-top__logo-img
+
+mixin Btn (titleText, mod = "")
+	if (titleText == "о салоне")
+		a(href="#js-about" class="btn") #{titleText}
+	else
+		button(class= "btn " + mod) #{titleText}
+
+mixin socials(className, mod = '')
+	ul(class= className + "__list " + mod)
+		each value, key in pathSocials
+			li(class=className + "__items " + mod)
+				a(href=value class=className + "__link " + key + ' ' + mod)
+
+mixin contacts(className)
+	ul(class=className + "__list")
+		each value, key in contacts
+			li(class=className + "__items " + key)= value
+
+mixin menuNav(className, mod="")
+
+	if (className == "option")
+		each key, value in menu
+			if value != "news" && value != "diploma" && value != "price" && value != "about" && value != "specialists"
+				option= key.name
+
+
+	else if (mod == "header-nav_footer")
+		ul(class=className + "__list "+ mod)
+			each key, value in menu
+				if (value != "news" && value != "diploma"&& value != "price" && value!="about")
+					li(class= className + "__items " + mod)
+						a(href=key.path class=className + "__link "+ mod)= key.name
+	else
+		ul(class=className + "__list")
+			each key, value in menu
+				li(class= className + "__items")
+					a(href=key.path class=className + "__link")= key.name
+
+mixin titleLogo(className = '')
+	div(class= "title__logo"+" "+className)
+		img(src="assets/img/logo-2.svg" class= "title__img")
+
+mixin Services
+	each value, key in menu
+		- var str = value.name
+		if value.services !== undefined
+			div(class = "services__items")
+				.services-content
+					.services-title
+						+titleLogo
+						h3.js-h3.services-title__top= str +' '+ (str.indexOf('сервис') == -1 ? 'сервис' : '')
+					each priceList in value
+						if typeof priceList === "object"
+							ul.services__content-list
+								each name, price in priceList
+									li.services__content-items
+										span(class="services-name")= price + " - "
+										span(class="services-price")= name
+					+Btn("ВСЕ УСЛУГИ", "btn_white")
+				div(class = "services-bg" style= `background-image: url('assets/img/services/${key}.png')`)
+mixin debug
+	.debug
+		div
+			div
+				- for (var i = 1; i <= 12; i++)
+					div
+mixin stars(number)
+	- for (var i = 1; i<=number; i++)
+		i.fa.fa-star
+mixin formHidden(email, name="site", text="Заявка с сайта")
+	// hidden required fields
+	input(name="project_name" type="hidden" value= name)
+	input(name="admin_email" type="hidden" value= email)
+	input(name="form_subject" type="hidden" value= text)
+	// end hidden required fields

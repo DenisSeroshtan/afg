@@ -1,0 +1,38 @@
+//html.mm-opened {
+//	overflow-y: scroll;
+//}
+//.mm-panels > .mm-panel.mm-hasnavbar {
+//	right: -18px;
+//}
+
+.mm-listview > li > a, .mm-listview > li > span {
+	text-align: left;
+	padding: rem(10px) rem(10px) rem(10px) rem(60px);
+	transition: color .15s ease;
+
+	&:hover {
+		color: $accent;
+	}
+}
+
+.mm-listview > li:not(.mm-divider):after {
+	display: none;
+}
+
+.mm-navbar {
+	border-bottom: none;
+}
+
+.mm-navbar .mm-title img {
+	height: rem(22px);
+	padding: 0;
+}
+
+.mm-menu.mm-theme-black .mm-listview > li.mm-selected > a:not(.mm-next), .mm-menu.mm-theme-black .mm-listview > li.mm-selected > span {
+	color: $accent;
+	background: none;
+}
+
+.mm-menu .mm-listview > li a:not(.mm-next) {
+	background: none;
+}

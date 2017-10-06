@@ -1,0 +1,126 @@
+
+@function rem($px){
+	@return $px/16px+0rem;
+}
+@mixin font($size:16px, $color:#fff){
+	font-size: rem($size);
+	color: $color;
+}
+@mixin inline-block($valign:top){
+	display: inline-block;
+	vertical-align: $valign;
+}
+
+@mixin bg-cover($url) {
+	background: url($url) no-repeat center center;
+	background-size: cover;
+}
+@mixin cover($color: #f6f6f6){
+	background-color: $color;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+@mixin absolute-center {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+/* --------- clearfix mixins --------- */
+%clearfix {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+@mixin pseudoContent($content) {
+	content: $content;
+	display: inline-block;
+}
+@mixin pseudo ($position: before, $content: "") {
+
+	@if ($position == after) {
+		&:after {
+			@include pseudoContent($content);
+			@content
+		}
+	}
+	@else if ($position == both) {
+		&:before, &:after {
+			@include pseudoContent($content);
+			@content
+		}
+	}
+	@else {
+		&:before {
+			@include pseudoContent($content);
+			@content
+		}
+	}
+}
+/* --------- responsive mixins --------- */
+
+@mixin desktop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: 1170px) {
+		@content;
+	}
+}
+@mixin tablets {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin phones {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+//placeholder
+@mixin placeholder{
+	&::-webkit-input-placeholder{
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+@mixin dots {
+	.owl-dots {
+		text-align: center;
+		.owl-dot {
+			display: inline-block;
+			height: rem(10px);
+			width: rem(10px);
+			margin-right: rem(10px);
+			background: #fff;
+			border-radius: 50%;
+			&.active {
+				background: $accent;
+			}
+		}
+	}
+}

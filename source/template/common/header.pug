@@ -1,0 +1,31 @@
+header(style= inlineImg.header_bg).header#js-header
+
+	.header-top
+		+logoSvg
+		.phone= contacts.phone
+
+		a(href="#my-menu").hamburger.hamburger--emphatic
+			span.hamburger-box
+				span.hamburger-inner
+	nav#my-menu
+		+menuNav("header-nav")
+	+socials('header-socials')
+	.header-mid
+		.header-mid__wrap
+			.container
+				.header-mid__row
+					.header-welcome
+						.header-welcome__title
+							each value, key in welcomeTitle
+								div(class = `header-title__${key}`)
+									if key == 'main'
+										h1= value
+									else
+										p= value
+						.header-welcome__desc
+							p !{desc.header}
+						+Btn("о салоне")
+	.header-bottom
+		.container
+			+contacts("header-contacts")
+

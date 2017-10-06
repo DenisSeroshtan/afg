@@ -1,0 +1,116 @@
+
+.s-overlay {
+	width: 100%;
+	padding: 5% 0;
+	position: relative;
+	color: #fff;
+	@include sm-block {
+		padding: 10% 0;
+	}
+	@include cover($dark);
+	@include pseudo(){
+		display: block;
+		background: rgba($overlay, .92);
+		@include absolute-center;
+	}
+	& > * {
+		position: relative;
+	}
+}
+
+.about__row {
+	@include row-float;
+}
+@mixin commonStyle {
+	@include col-float;
+	@include col;
+	@include size-md(10);
+	@include offset-md(1);
+	@include size-xs(12);
+	@include offset-xs(0);
+}
+.about__desc {
+	@include size(5);
+	@include commonStyle;
+	margin-top: rem(20px);
+}
+.about__gallery {
+	@include size(7);
+  @include commonStyle;
+
+}
+.s-title {
+	@include font(30px, $accent);
+	@include font-family(exbold);
+	text-transform: uppercase;
+
+}
+.js-h2 {
+	span {
+		color : #fff;
+	}
+}
+.s-text {
+  @include font(18px);
+	span {
+		color: $accent;
+		@include font-family(bold);
+	}
+	p {
+		margin: rem(30px) 0;
+	}
+}
+
+.gallery__thumbs {
+
+}
+.fotorama__nav-wrap {
+	max-width: 100%;
+	position: absolute;
+	bottom: 3%;
+	padding: 0 rem(30px);
+
+}
+.fotorama__thumb {
+	border: 4px solid #fff;
+	padding: 4px;
+	box-sizing: border-box;
+}
+
+ .fotorama__thumb-border {
+	 border-color:  darken(#fff, 80%);
+ }
+ .fotorama__nav--thumbs .fotorama__nav__frame {
+
+}
+.fotorama__nav:after, .fotorama__nav:before, .fotorama__stage:after, .fotorama__stage:before{
+	display: none;
+}
+.fotorama__arr,
+.fotorama__fullscreen-icon,
+.fotorama__video-close,
+.fotorama__video-play {
+	background: none;
+}
+@media (-webkit-min-device-pixel-ratio:1.5),
+(min-resolution:2dppx) {
+	.fotorama__arr,
+	.fotorama__fullscreen-icon,
+	.fotorama__video-close,
+	.fotorama__video-play {
+		background: none;
+	}
+}
+
+.fotorama__arr--prev {
+	left: 25px;
+	@include icon-pseudo($icon-angle-left){
+		font-size: rem(32px);
+	};
+
+}
+.fotorama__arr--next {
+	@include icon-pseudo($icon-angle-right){
+		font-size: rem(32px);
+	};
+}
