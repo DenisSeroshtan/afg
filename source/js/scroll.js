@@ -22,3 +22,22 @@
 
 
 })();
+(function () { // dropdown menu
+  $('.hamburger').on('click', function(e){
+    e.preventDefault();
+    var $this = $(this);
+    var menu = $this.attr('href');
+
+    $(menu).slideToggle(400, function (){
+
+      if ($(this).css('display') === 'none'){
+        $(this).removeAttr('style');
+      }
+
+    });
+    $this.toggleClass('is-active');
+
+  });
+
+
+})();

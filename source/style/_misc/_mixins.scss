@@ -108,19 +108,13 @@
 	}
 }
 
-@mixin dots {
-	.owl-dots {
-		text-align: center;
-		.owl-dot {
-			display: inline-block;
-			height: rem(10px);
-			width: rem(10px);
-			margin-right: rem(10px);
-			background: #fff;
-			border-radius: 50%;
-			&.active {
-				background: $accent;
-			}
-		}
+@mixin wave($url) {
+	@include pseudo(after){
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: rem(6px);
+		width: 100%;
+		background: url(#{$url}) repeat-x;
 	}
 }

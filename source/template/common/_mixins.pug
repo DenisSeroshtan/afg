@@ -6,14 +6,14 @@ mixin svg(className, id)
 	svg(class= className)
 		use(xlink:href=`/assets/svg/sprite.svg#${id}`)
 mixin hamburger
-	a(href="#my-menu").hamburger.hamburger--elastic
+	a(href="#menu").hamburger.hamburger--elastic
 		span.hamburger-box
 			span.hamburger-inner
 
 mixin nav(className, activeItem, mod= "")
-	nav(class= className)
+	nav(class= className )
 		+hamburger
-		ul(class= className + "__list" + mod)
+		ul(class= className + "__list" + mod id="menu")
 			each value, ndx in nav
 				li(class=className+'__item' + ( (ndx == activeItem) ?  ' '+'active' : '')+ mod)
 					a(href="#" class=className+"__link "+mod)= value
