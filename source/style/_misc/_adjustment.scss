@@ -1,5 +1,7 @@
 @mixin default-font {
 	font-family: ralewayregular, sans-serif;
+	color: #333;
+	font-size: rem(15px);
 }
 $color-link: #fff;
 //style
@@ -35,7 +37,7 @@ html {
 }
 body {
 	@include default-font;
-	line-height: 1.75;
+	line-height: 1.4;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 }
@@ -93,8 +95,19 @@ textarea
 	@include default-font;
 
 }
-
-button, input:focus, select:focus {
+button {
+	cursor: pointer;
+}
+button:focus, input:focus, select:focus {
 	outline:0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+td,
+th {
+	padding: 0
 }
 

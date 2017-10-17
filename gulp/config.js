@@ -2,6 +2,7 @@ module.exports = {
   root: './build',
   content: './content.json',
   template: './source/template/**/*.pug',
+  pathTransit: './source/foundation/svg4everybody.min.js',
   src: {
     pug: './source/template/pages/*.pug',
     style: './source/style/**/*.scss',

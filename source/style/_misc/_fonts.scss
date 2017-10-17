@@ -1,12 +1,29 @@
 
 @font-face {
-	font-family: 'fira_sansregular';
-	src: url('../fonts/firasansregular-webfont.woff2') format('woff2'),
-	url('../fonts/firasansregular-webfont.woff') format('woff'),
-	url('../fonts/firasansregular-webfont.svg#fira_sansregular') format('svg');
+	font-family: 'robotobold';
+	src: url('../fonts/robotobold-webfont.woff2') format('woff2'),
+	url('../fonts/robotobold-webfont.woff') format('woff'),
+	url('../fonts/robotobold-webfont.svg#robotobold') format('svg');
 	font-weight: normal;
 	font-style: normal;
 
+}
+@font-face {
+	font-family: 'webfontmedium';
+	src: url('../fonts/pfcentroslabpromedium-webfont.woff2') format('woff2'),
+	url('../fonts/pfcentroslabpromedium-webfont.woff') format('woff'),
+	url('../fonts/pfcentroslabpromedium-webfont.svg#webfontregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+@font-face {
+	font-family: 'webfontbold';
+	src: url('../fonts/pfcentroslabprobold-webfont.woff2') format('woff2'),
+	url('../fonts/pfcentroslabprobold-webfont.woff') format('woff'),
+	url('../fonts/pfcentroslabprobold-webfont.svg#webfontregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
@@ -19,25 +36,7 @@
 
 }
 
-@font-face {
-	font-family: 'ralewayextrabold';
-	src: url('../fonts/ralewayextrabold-webfont.woff2') format('woff2'),
-	url('../fonts/ralewayextrabold-webfont.woff') format('woff'),
-	url('../fonts/ralewayextrabold-webfont.svg#ralewayextrabold') format('svg');
-	font-weight: normal;
-	font-style: normal;
 
-}
-
-@font-face {
-	font-family: 'ralewaylight';
-	src: url('../fonts/ralewaylight-webfont.woff2') format('woff2'),
-	url('../fonts/ralewaylight-webfont.woff') format('woff'),
-	url('../fonts/ralewaylight-webfont.svg#ralewaylight') format('svg');
-	font-weight: normal;
-	font-style: normal;
-
-}
 
 @font-face {
 	font-family: 'ralewayregular';
@@ -56,19 +55,7 @@
 	url('../fonts/ralewaysemibold-webfont.svg#ralewaysemibold') format('svg');
 	font-weight: normal;
 	font-style: normal;
-
 }
-
-@font-face {
-	font-family: 'ralewaythin';
-	src: url('../fonts/ralewaythin-webfont.woff2') format('woff2'),
-	url('../fonts/ralewaythin-webfont.woff') format('woff'),
-	url('../fonts/ralewaythin-webfont.svg#ralewaythin') format('svg');
-	font-weight: normal;
-	font-style: normal;
-
-}
-
 
 @mixin font-family($style:regular) {
 	@if $style == regular {
@@ -77,19 +64,16 @@
 	@if $style == bold {
 		font-family: 'ralewaybold';
 	}
-	@if $style == exbold {
-		font-family: 'ralewayextrabold';
-	}
-	@if $style == light {
-		font-family: 'ralewaylight';
+	@if $style == roboto {
+		font-family: 'robotobold';
 	}
 	@if $style == semi {
 		font-family: 'ralewaysemibold';
 	}
-	@if $style == thin {
-		font-family: 'ralewaythin';
+	@if $style == pfmedium {
+		font-family: 'webfontmedium';
 	}
-	@if $style == fira {
-		font-family: 'fira_sansregular';
+	@if $style == pfbold {
+		font-family: 'webfontbold';
 	}
 }

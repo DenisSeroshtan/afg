@@ -2,17 +2,29 @@ mixin preloader
 	.preloader
 		.pulse
 
-mixin logoSvg
-	.header-top__logo
-		a(href="/").header-top__logo-link
-			img(src="assets/img/logo-1.svg"
-				alt="салон красоты smitler" ).header-top__logo-img
+mixin svg(className, id)
+	svg(class= className)
+		use(xlink:href=`/assets/svg/sprite.svg#${id}`)
+mixin hamburger
+	a(href="#my-menu").hamburger.hamburger--elastic
+		span.hamburger-box
+			span.hamburger-inner
+
+mixin nav(className, activeItem, mod= "")
+	nav(class= className)
+		+hamburger
+		ul(class= className + "__list" + mod)
+			each value, ndx in nav
+				li(class=className+'__item' + ( (ndx == activeItem) ?  ' '+'active' : '')+ mod)
+					a(href="#" class=className+"__link "+mod)= value
+
 
 mixin Btn (titleText, mod = "")
-	if (titleText == "о салоне")
-		a(href="#js-about" class="btn") #{titleText}
+	if (titleText == "Отправить")
+		button(class= "btn" type="button") #{titleText}
 	else
-		button(class= "btn " + mod) #{titleText}
+		a(href="#" class="btn " + mod) #{titleText}
+
 
 mixin socials(className, mod = '')
 	ul(class= className + "__list " + mod)
@@ -45,9 +57,6 @@ mixin menuNav(className, mod="")
 				li(class= className + "__items")
 					a(href=key.path class=className + "__link")= key.name
 
-mixin titleLogo(className = '')
-	div(class= "title__logo"+" "+className)
-		img(src="assets/img/logo-2.svg" class= "title__img")
 
 mixin Services
 	each value, key in menu
