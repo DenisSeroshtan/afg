@@ -1,0 +1,79 @@
+.section {
+	padding-top: rem(95px);
+
+}
+.rating, .deals, .advantages, .about {
+	background: $bg;
+}
+.section__top {
+	text-align: center;
+	@include row-float;
+
+	.container {
+	}
+}
+.top__row {
+	@include col;
+	@include size(10);
+	@include shift(1);
+}
+.top__title {
+	font-size: 1.875rem;
+	@include font-family(pfmedium);
+	padding-bottom: rem(30px);
+	position: relative;
+	@include pseudo() {
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translate(-50%);
+		height: 0.25rem;
+		min-width: 10rem;
+		background: $accent;
+	}
+
+}
+.top__desc {
+	margin-top: rem(30px);
+	.link {
+		color: $accent;
+		text-decoration: underline;
+		transition: .25s ease;
+		font-weight: 700;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+//-_-_-_-_-_-_-_-_-_-_-_-_-/rating_mid/_-_-_-_-_-_-_-_-_-_-_-_-//
+.rating-mid__top {
+	min-height: rem(550px);
+	margin-top: rem(70px);
+	background-repeat: no-repeat;
+	background-position: top;
+}
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-/section bottom all/_-_-_-_-_-_-_-_-_-_-_-_-//
+
+.section__bottom {
+	width: 100%;
+	min-height: rem(130px);
+	text-align: center;
+	vertical-align: middle;
+	line-height: rem(130px);
+	&.rating {
+		background: $darkBlue;
+		@include wave($pathWhiteWave)
+	}
+	&.deals, &.advantages {
+		background-color: #e5e5e5;
+		@include wave($pathDarkWave)
+	}
+	&.account {
+		@include wave($pathWhiteWave);
+		background: $lightBlue;
+	}
+	.btn {
+		white-space: nowrap;
+	}
+}

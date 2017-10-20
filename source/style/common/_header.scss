@@ -16,7 +16,7 @@ $formColor: #97a4b2;
 	& > * {
 		position: relative;
 	}
-	@include wave("../img/decor/wave_white.png")
+	@include wave($pathWhiteWave)
 }
 
 .header-top {
@@ -120,6 +120,11 @@ $formColor: #97a4b2;
 	&:hover {
 		@extend .nav__item.active;
 		transition: .25s ease;
+		@include lg-block {
+			background: lighten(#1C242C, 10%);
+		}
+
+
 	}
 
 }

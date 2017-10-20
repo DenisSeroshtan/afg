@@ -3,7 +3,7 @@ $accent: #f39f18;
 
 $darkBlue: #2c3949;
 $lightBlue: #394b5f;
-
+$bg: #f9f9f9;
 
 $fontawesome_path: '../fonts/fontawesome';
 
@@ -23,7 +23,7 @@ $fontawesome_path: '../fonts/fontawesome';
 
 //section
 @import "common/header";
-//@import "common/services";
+@import "common/rating";
 //@import "common/about";
 //@import "common/feedback";
 //@import "common/reviews";

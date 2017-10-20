@@ -25,6 +25,20 @@ mixin Btn (titleText, mod = "")
 	else
 		a(href="#" class="btn " + mod) #{titleText}
 
+mixin sectionTop(title, desc)
+	.section__top
+		.container
+			.top__row
+				if (title == "как мы работаем")
+					h2.top__title #{title}
+				else
+					h2.top__title= title
+					.top__desc
+						p !{desc}
+
+mixin sectionBottom(btnText, mod = "")
+	div(class= "section__bottom " + mod id="js-btn_"+mod)
+		+Btn(btnText)
 
 mixin socials(className, mod = '')
 	ul(class= className + "__list " + mod)
@@ -58,24 +72,7 @@ mixin menuNav(className, mod="")
 					a(href=key.path class=className + "__link")= key.name
 
 
-mixin Services
-	each value, key in menu
-		- var str = value.name
-		if value.services !== undefined
-			div(class = "services__items")
-				.services-content
-					.services-title
-						+titleLogo
-						h3.js-h3.services-title__top= str +' '+ (str.indexOf('сервис') == -1 ? 'сервис' : '')
-					each priceList in value
-						if typeof priceList === "object"
-							ul.services__content-list
-								each name, price in priceList
-									li.services__content-items
-										span(class="services-name")= price + " - "
-										span(class="services-price")= name
-					+Btn("ВСЕ УСЛУГИ", "btn_white")
-				div(class = "services-bg" style= `background-image: url('assets/img/services/${key}.png')`)
+
 mixin debug
 	.debug
 		div
