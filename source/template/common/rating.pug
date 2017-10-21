@@ -1,8 +1,15 @@
 section.section.rating#js-rating
 	+sectionTop(secTitle.rating, desc.rating)
-	.rating-mid
-		div(style= inlineImg.rating_bg).rating-mid__top
-		.rating-mid__bottom
+
+	div(style= inlineImg.rating_bg).rating-mid
+		+ratingList(ratingTop, 'rating__item_top')
+
+	.rating-bottom
+		.bottom__triangle
+			+svg("triangle__svg-libra", "libra")
+			+svg('logo__svg logo__svg_triangle', 'logo')
+		.bottom__bg
+			+ratingList(ratingBottom, 'rating__item_bottom')
 	+sectionBottom("Заказать оценку", "rating")
 
 

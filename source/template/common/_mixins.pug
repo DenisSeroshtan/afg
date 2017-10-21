@@ -2,7 +2,7 @@ mixin preloader
 	.preloader
 		.pulse
 
-mixin svg(className, id)
+mixin svg(className = '', id)
 	svg(class= className)
 		use(xlink:href=`/assets/svg/sprite.svg#${id}`)
 mixin hamburger
@@ -35,6 +35,14 @@ mixin sectionTop(title, desc)
 					h2.top__title= title
 					.top__desc
 						p !{desc}
+mixin ratingList(obj, mod = "")
+	.container
+		ul(class= "rating__list " + mod)
+			each val, key in obj
+				li(class="rating__item " + mod)
+					a(href= val["link"] class="item__link " + mod)= key
+					div(class="item__text " + mod )
+						p= val["text"]
 
 mixin sectionBottom(btnText, mod = "")
 	div(class= "section__bottom " + mod id="js-btn_"+mod)
