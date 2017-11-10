@@ -215,6 +215,7 @@
 //-_-_-_-_-_-_-_-_-_-_-_-_-/section bottom all/_-_-_-_-_-_-_-_-_-_-_-_-//
 
 .section__bottom {
+	position: relative;
 	width: 100%;
 	min-height: rem(130px);
 	text-align: center;
@@ -235,4 +236,42 @@
 	.btn {
 		white-space: nowrap;
 	}
+}
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-/popup style/_-_-_-_-_-_-_-_-_-_-_-_-//
+.content .form {
+	z-index: 2000;
+	max-width: 320px;
+	background-color: rgb(36,51,67);
+	padding: 35px 35px 30px;
+	color: #97a4b2;
+	font-size: .875em;
+	border-bottom: #1A222B 4px solid;
+	box-shadow: 0 0 18px rgba(0,0,0,.5), 0 0 0 5px #243343;
+	border: none;
+	border-radius: 1px;
+	opacity: 1;
+	.form__title {
+		color: #fff;
+	}
+}
+.modal {
+	.close {
+		color: #B2B7BC;
+		&:before {
+			display: none;
+		}
+		@include icon-pseudo($icon-close, after) {
+			font-size: rem(26px);
+			font-weight: normal;
+			transition: .25s ease;
+
+		}
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+.overlay {
+	background: rgba(0, 0, 0, 0.88);
 }

@@ -19,11 +19,13 @@ $fontawesome_path: '../fonts/fontawesome';
 // animation
 @import "_misc/preloader";
 @import "common/hamburger";
+@import "common/popup";
 
 
 //section
 @import "common/header";
 @import "common/rating";
+@import "common/deals";
 //@import "common/about";
 //@import "common/feedback";
 //@import "common/reviews";

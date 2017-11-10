@@ -6,5 +6,6 @@ module.exports = [
   // "./source/js/regex.js",
   // "./source/js/form.js",
   // "./source/js/map.js",
-  "./source/js/scroll.js"
+  "./source/js/scroll.js",
+  "./source/js/popup.js"
 ];

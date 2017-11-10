@@ -1,0 +1,15 @@
+section.section.deals#js-deals
+	+sectionTop(secTitle.deals, desc.deals)
+	.deals-mid
+		.container
+			.deals-mid__title
+				| Наши услуги по
+				span  сопровождению сделок M&A
+			ul.deals__list
+				-for(var i = 1; i<=10; i++)
+					li.deals__item
+						+svg("deals__svg","deals--" + i)
+						.deals__text= dealsMidItems[i-1]
+
+	+sectionBottom("Заказать сопровождение", "deals")
+

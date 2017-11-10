@@ -1,0 +1,67 @@
+
+.deals-mid__title {
+	@include font-family(pfmedium);
+	font-size: 1.5rem;
+	line-height: 2.25rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: $darkBlue;
+	span {
+		color: $accent;
+		text-decoration: underline;
+		transition: text-decoration .25s ease;
+		&:hover {
+			text-decoration: none;
+		}
+  }
+}
+.deals-mid__title {
+	margin: rem(70px) 0;
+}
+.deals__list {
+	@include row-flex;
+	justify-content: center;
+	text-align: center;
+
+}
+.deals__item {
+	@include col;
+	@include size(2);
+	@include size-md(3);
+	@include size-sm(4);
+	@include size-xs(6);
+
+	position: relative;
+	color: #111;
+	font-size: 0.813rem;
+	font-weight: 700;
+	line-height: 1rem;
+	text-decoration: underline;
+	margin-bottom: rem(70px);
+	transition: .5s ease;
+	cursor: pointer;
+	&:hover {
+		color: $accent;
+		text-decoration: none;
+		transform: translateY(-15%);
+	}
+}
+.deals__svg {
+	width: 100%;
+	height:rem(80px);
+	fill: $accent;
+	margin-bottom: rem(50px);
+
+}
+.deals__text {
+	position: relative;
+	@include pseudo() {
+		position: absolute;
+		top: rem(-18px);
+		left: 50%;
+		width: rem(60px);
+		height: rem(2px);
+		margin-left: rem(-30px);
+		background: $accent;
+	}
+}
