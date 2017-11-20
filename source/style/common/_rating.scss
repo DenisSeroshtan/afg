@@ -6,12 +6,14 @@
 	&.rating, &.deals, &.advantages, &.about {
 		background: $bg;
 	}
+	&.account {
+		background: $darkBlue;
+	}
 }
 
 .section__top {
 	text-align: center;
 	@include row-float;
-
 	.container {
 	}
 }

@@ -1,0 +1,76 @@
+//-_-_-_-_-_-_-_-_-_-_-_-_-/section title/_-_-_-_-_-_-_-_-_-_-_-_-//
+
+.top__title {
+	&.white_text {
+		color: #f9f9f9;
+	}
+}
+.top__desc{
+	&.white_text {
+		color: #e5e5e5;
+	}
+}
+//-_-_-_-_-_-_-_-_-_-_-_-_-/section middle/_-_-_-_-_-_-_-_-_-_-_-_-//
+.account-mid {
+	margin: rem(20px) 0;
+}
+.account__row {
+
+}
+.rating__list{
+	&.account__list {
+		min-height: rem(860px);
+		background: url("../../assets/img/account_bg.png") center center no-repeat;
+		background-size: contain;
+	}
+}
+.rating__item {
+	&.account__list {
+		position: relative;
+		&:first-child {
+			margin-top: rem(67px);
+			padding-left: 5.625rem;
+			padding-right: 0;
+		}
+		&:nth-child(3){
+			margin-top: rem(67px);
+		}
+
+		&:nth-child(6), &:nth-child(7) {
+			padding-right: 0;
+			padding-left: 5.625rem;
+		}
+		&:nth-child(8) {
+			top: rem(64px);
+
+		}
+	}
+}
+
+	.content__item {
+		@include col;
+		@include size(4);
+
+
+	}
+	.content__item-title {
+		width: 100%;
+	}
+	.content__item-desc {
+		color: #fff;
+	}
+	.content__item_wrap{
+		background: $accent;
+		width:rem(132px);
+		height:rem(132px);
+		border-radius: 50%;
+		@include absolute-center
+		margin-top: 0;
+	}
+	.account__svg {
+		@include absolute-center;
+		width: rem(78px);
+		height: rem(78px);
+		background: $accent;
+		fill: $darkBlue;
+	}

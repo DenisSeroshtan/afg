@@ -26,24 +26,33 @@ mixin Btn (titleText, mod = "")
 	else
 		a(href="#" class="btn " + mod) #{titleText}
 
-mixin sectionTop(title, desc)
+mixin sectionTop(title, desc, mod = '')
 	.section__top
 		.container
 			.top__row
 				if (title == "как мы работаем")
-					h2.top__title #{title}
+					h2(class="top__title "+ mod) #{title}
 				else
-					h2.top__title= title
-					.top__desc
+					h2(class="top__title "+ mod) #{title}
+					div(class="top__desc "+ mod)
 						p !{desc}
+
+mixin Top(sectionName)
+	section(class="section "+ sectionName id = "#js-"+ sectionName)
+		+sectionTop(secTitle[sectionName], desc[sectionName])
+
 mixin ratingList(obj, mod = "")
 	.container
 		ul(class= "rating__list " + mod)
 			each val, key in obj
 				li(class="rating__item " + mod)
-					a(href= val["link"] class="item__link " + mod)= key
-					div(class="item__text " + mod )
-						p= val["text"]
+					if (key === "")
+						.content__item_wrap
+							+svg("account__svg", "book")
+					else
+						a(href= val["link"] class="item__link " + mod)= key
+						div(class="item__text " + mod )
+							p= val["text"]
 
 mixin sectionBottom(btnText, mod = "")
 	div(class= "section__bottom " + mod id="js-btn_"+mod)
