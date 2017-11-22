@@ -22,55 +22,83 @@
 		min-height: rem(860px);
 		background: url("../../assets/img/account_bg.png") center center no-repeat;
 		background-size: contain;
+		@include md-block{
+			background: none;
+			min-height: 0;
+		}
 	}
 }
 .rating__item {
 	&.account__list {
 		position: relative;
+		@include size-sm(6);
+		@include size-xs(12);
+		@include md-block {
+			margin-bottom: rem(20px);
+			&:nth-child(5){
+				display: none;
+			}
+		}
+		@include sm-block {
+			padding: 0;
+
+		}
 		&:first-child {
 			margin-top: rem(67px);
 			padding-left: 5.625rem;
 			padding-right: 0;
+			@include md-block {
+				margin-top: 0;
+				padding-right: inherit;
+				padding-left: inherit;
+			}
 		}
 		&:nth-child(3){
 			margin-top: rem(67px);
+			@include md-block {
+				margin-top: 0;
+			}
 		}
 
 		&:nth-child(6), &:nth-child(7) {
 			padding-right: 0;
 			padding-left: 5.625rem;
+			@include md-block {
+				padding-right: inherit;
+				padding-left: inherit;
+			}
 		}
 		&:nth-child(8) {
 			top: rem(64px);
-
+			@include md-block {
+				top: 0;
+			}
 		}
 	}
 }
 
-	.content__item {
-		@include col;
-		@include size(4);
 
-
+.content__item-title {
+	width: 100%;
+}
+.content__item-desc {
+	color: #fff;
+}
+.content__item_wrap{
+	background: $accent;
+	width:rem(132px);
+	height:rem(132px);
+	border-radius: 50%;
+	@include absolute-center
+	margin-top: 0;
+	@include md-block{
+		display: none;
 	}
-	.content__item-title {
-		width: 100%;
-	}
-	.content__item-desc {
-		color: #fff;
-	}
-	.content__item_wrap{
-		background: $accent;
-		width:rem(132px);
-		height:rem(132px);
-		border-radius: 50%;
-		@include absolute-center
-		margin-top: 0;
-	}
-	.account__svg {
-		@include absolute-center;
-		width: rem(78px);
-		height: rem(78px);
-		background: $accent;
-		fill: $darkBlue;
-	}
+}
+.account__svg {
+	@include absolute-center;
+	width: rem(78px);
+	height: rem(78px);
+	background: $accent;
+	fill: $darkBlue;
+}

@@ -1,0 +1,86 @@
+.section.advantages{
+	background-color: #e5e5e5;
+}
+.advantages-mid {
+	margin: rem(75px) 0;
+}
+.advantages-mid__row{
+	@include row-flex;
+	justify-content: center;
+}
+.advantages-mid__title {
+	@include col;
+	@include size(10);
+	text-align: center;
+	color: $lightBlue;
+	@include font-family(pfmedium);
+	font-size: 1.5rem;
+}
+.card__list {
+	@include col;
+	@include size(11);
+	margin-top: rem(56px);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.card__item {
+	width: 16.375rem;
+	min-height: 23.5rem;
+	background: $darkBlue;
+	margin:0 rem(15px) rem(30px);
+	border-bottom: #1A222B 4px solid;
+	text-align: center;
+	padding: rem(54px) rem(28px) rem(48px);
+	transition: border-bottom-color .25s ease;
+  &:hover {
+	  border-bottom-color: $accent;
+	  .card__img {
+		  transform: scale(1.1);
+	  }
+  }
+}
+.card__img {
+	display: inline-block;
+	width: 7.5rem;
+	height: 7.5rem;
+	border-radius: 50%;
+	background: $accent;
+	text-align: center;
+	position: relative;
+	transition: all .25s ease;
+}
+.card__svg {
+	@include absolute-center;
+	width: rem(80px);
+	height: rem(50px);
+	fill: #fff;
+}
+.card__img-text {
+	display: inline-block;
+	color: white;
+	@include font-family(pfmedium);
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 2.9;
+	white-space: nowrap;
+	text-transform: uppercase;
+}
+.card__title {
+	text-transform: uppercase;
+	color: #e5e5e5;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 2.25rem;
+	margin-top: rem(30px);
+
+}
+.card__text {
+	color: #97a4b2;
+	margin-top: rem(20px);
+	font-size: 0.875rem;
+	.advantages__text_yellow {
+		color: $accent;
+		font-weight: 700;
+	}
+}

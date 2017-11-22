@@ -1,0 +1,21 @@
+section.section.advantages#js-advantages
+	+sectionTop(secTitle.advantages, desc.advantages)
+	.advantages-mid
+		.container
+			.advantages-mid__row
+				h3.advantages-mid__title Привлекательные условия сотрудничества
+				ul.card__list
+					each value, key in advantages
+						li.card__item
+							.card__img
+								if (key == "скидки")
+									span.card__img-text 50%
+								else if (key == "команда")
+									+svg("card__svg clock", "clock")
+								else if (key == "скорость")
+									+svg("card__svg people", "people")
+							.card__title= key
+							.card__text
+								p !{value}
+
+	+sectionBottom("Обратиться к нам", "advantages")

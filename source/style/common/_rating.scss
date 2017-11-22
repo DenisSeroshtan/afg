@@ -29,6 +29,7 @@
 	@include font-family(pfmedium);
 	padding-bottom: rem(30px);
 	position: relative;
+	color: $darkBlue;
 	@include pseudo() {
 		position: absolute;
 		top: 100%;
@@ -227,8 +228,12 @@
 		background: $darkBlue;
 		@include wave($pathWhiteWave)
 	}
-	&.deals, &.advantages {
+	&.deals {
 		background-color: #e5e5e5;
+		@include wave($pathDarkWave)
+	}
+	&.advantages {
+		background-color: #d6d6d6;
 		@include wave($pathDarkWave)
 	}
 	&.account {
