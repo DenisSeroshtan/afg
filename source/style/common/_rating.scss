@@ -3,7 +3,7 @@
 	@include sm-block{
 		padding-top: 4%;
 	}
-	&.rating, &.deals, &.advantages, &.about {
+	&.rating, &.deals, &.advantages, &.about, &.contacts {
 		background: $bg;
 	}
 	&.account {
@@ -236,9 +236,13 @@
 		background-color: #d6d6d6;
 		@include wave($pathDarkWave)
 	}
-	&.account, &.work {
-		@include wave($pathWhiteWave);
+	&.account {
+		@include wave($pathGreyWave);
 		background: $lightBlue;
+	}
+	&.work {
+		background: $lightBlue;
+		@include wave($pathWhiteWave)
 	}
 	.btn {
 		white-space: nowrap;

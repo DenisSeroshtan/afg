@@ -1,0 +1,31 @@
+.section.contacts {
+	@include wave($pathGreyWave);
+}
+$cardBg: #e5e5e5;
+.card__item_white {
+	background-color: $cardBg;
+	border-bottom-color: darken($cardBg, 10%);
+	&:hover {
+		.card__img_white {
+			border-color: $accent;
+		}
+	}
+}
+.card__img_white{
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: solid rem(5px) #d6d6d6;
+	margin-bottom: rem(40px);
+	transition: border-color .25s ease;
+}
+.card__item-name {
+	font-size: 1rem;
+	@include font-family(bold);
+}
+.card__item-occ {
+	color: #6e7b8b;
+	font-size: 0.813rem;
+	font-weight: 400;
+	line-height: 1.125rem;
+	margin: rem(12px) 0 rem(24px);
+}

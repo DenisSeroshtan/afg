@@ -43,9 +43,9 @@ mixin nav(className, activeItem, mod= "")
 	nav(class= className )
 		+hamburger
 		ul(class= className + "__list" + mod id="menu")
-			each value, ndx in nav
-				li(class=className+'__item' + ( (ndx == activeItem) ?  ' '+'active' : '')+ mod)
-					a(href="#" class=className+"__link "+mod)= value
+			each link, key in nav
+				li(class=className+'__item' + ( (key == activeItem) ?  ' '+'active' : '')+ mod)
+					a(href="#js-"+link class=className+"__link "+mod)= key
 
 
 mixin Btn (titleText, mod = "")

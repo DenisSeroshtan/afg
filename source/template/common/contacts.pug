@@ -1,0 +1,13 @@
+section.section.contacts#js-contacts
+	+sectionTop(secTitle.contacts, desc.contacts)
+	.container
+		.advantages-mid__row
+			ul.card__list.card__list_contacts
+				each value, key in contacts
+					li.card__item.card__item_white
+						div(style= value.photo).card__img.card__img_white
+						.card__item-name= key
+						.card__item-occ= value.occ
+						.card__item-name.card__phone= value.num
+
+

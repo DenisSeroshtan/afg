@@ -4,6 +4,7 @@ $accent: #f39f18;
 $darkBlue: #2c3949;
 $lightBlue: #394b5f;
 $bg: #f9f9f9;
+$cardBg: #e5e5e5;
 
 $fontawesome_path: '../fonts/fontawesome';
 
@@ -29,6 +30,7 @@ $fontawesome_path: '../fonts/fontawesome';
 @import "common/account";
 @import "common/advantages";
 @import "common/work";
+@import "common/contacts";
 //@import "common/about";
 //@import "common/feedback";
 //@import "common/reviews";
