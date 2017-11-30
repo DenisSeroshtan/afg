@@ -13,6 +13,6 @@
     "owl.carousel": "original-owl-carousel#^2.2.1",
     "equalheights": "https://github.com/neomen/equalHeights.git",
     "jquery-validation": "jquery.validation#^1.17.0",
-    "jquery.maskedinput": "jquery-maskedinput#^1.4.1"
+    "jquery-drawsvg": "^1.1.0"
   }
 }

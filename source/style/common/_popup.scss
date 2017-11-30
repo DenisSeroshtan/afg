@@ -20,6 +20,7 @@
 
 
 .modal.showed {
+	position: fixed;
 	opacity: 1;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -39,7 +40,6 @@
 	width: 30px;
 	height: 30px;
 	text-align: center;
-	//color: #000;
 	top: 0;
 	right: 0;
 	cursor: pointer;

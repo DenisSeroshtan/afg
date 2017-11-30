@@ -22,7 +22,7 @@ window.onload = function () {
     var btnClose = document.createElement('div');
     var modalContent = document.createElement('div');
 
-
+    // создаем элементы DOM при загрузке документа
     document.body.insertBefore(overlay, document.body.children[0]);
     overlay.className = "overlay";
 
@@ -40,10 +40,16 @@ window.onload = function () {
     this.modalContent = document.querySelector(".modal .content");
     this.btnClose = document.querySelector(".modal .close");
 
-    var b = document.querySelector('body');
-    var bH = b.offsetHeight;
-    this.overlay.style.height = bH + "px";
 
+    this.resize = function () {
+      // расчет высоты overlay по высоте body
+      var b = document.querySelector('body');
+      var bH = b.offsetHeight;
+      popup.overlay.style.height = bH + "px";
+    };
+    popup.resize();
+    //изменение высоты overlay при изменение размера окна
+    window.onresize = popup.resize;
 
     this.trigger = document.querySelectorAll(obj.trigger);
 
@@ -54,8 +60,8 @@ window.onload = function () {
 
       // выравнивание по вертикали
       var wH= document.documentElement.clientHeight;
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      popup.modal.style.top = (scrollTop+wH/2)+"px";
+      // var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      popup.modal.style.top = wH/2+"px";
       popup.modalContent.innerHTML = cont;
 
       popup.overlay.classList.add('showed');
@@ -69,6 +75,7 @@ window.onload = function () {
       popup.modal.style.top = 0;
 
     };
+    // применяем настройки по ключам объекта
     if (obj.trigger !== undefined) {
       for(var i = 0; i<this.trigger.length; i++) {
         this.trigger[i].addEventListener('click', function(e){

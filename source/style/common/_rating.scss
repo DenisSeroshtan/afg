@@ -32,7 +32,7 @@
 	color: $darkBlue;
 	@include pseudo() {
 		position: absolute;
-		top: 100%;
+		bottom: 0;
 		left: 50%;
 		transform: translate(-50%);
 		height: 0.25rem;
@@ -236,7 +236,7 @@
 		background-color: #d6d6d6;
 		@include wave($pathDarkWave)
 	}
-	&.account {
+	&.account, &.work {
 		@include wave($pathWhiteWave);
 		background: $lightBlue;
 	}

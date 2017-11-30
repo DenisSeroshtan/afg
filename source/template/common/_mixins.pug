@@ -1,6 +1,34 @@
 mixin preloader
 	.preloader
 		.pulse
+mixin firstArrSvg
+	svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291.01178 129" height="129" width="291.01178" version="1.1" id="draw-svg-1" class="work__svg-bg")
+		path(id="path4138" d="M 3.4644996,126.28999 3.1137219,4.0613763 l 240.7182181,0 43.11847,58.7692707 -43.28202,63.461773 z" style="fill:#f39f18;fill-opacity:0;stroke-opacity:1;stroke:#f39f18;stroke-width:5px")
+mixin arrSvg(num)
+	svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291.01178 129" height="129" width="291.01178" version="1.1" id="draw-svg-"+num class="work__svg-bg")
+		path(id="path4138" d="M 3.3821314,126.02828 46.475601,62.999427 3.0313514,3.799673 l 240.7182186,0 43.11847,58.769271 -43.28202,63.461766 z" style="fill:#f39f18;fill-opacity:0;stroke-opacity:1;stroke:#f39f18;stroke-width:5px")
+
+mixin workList
+	ul.work__list
+		-var k = 1
+		each value, key in workList
+			if (key == "human")
+				li.work__item
+					.work__item-wrap
+						+svg("work__icon-svg", key)
+						span.work__item-num= k+"."
+						.work__item-text
+							| #{value}
+					+firstArrSvg
+			else
+				li.work__item
+					-var num = ++k
+					.work__item-wrap
+						+svg("work__icon-svg", key)
+						span.work__item-num= num+"."
+						.work__item-text
+							| #{value}
+					+arrSvg(num)
 
 mixin svg(className = '', id)
 	svg(class= className)
@@ -26,7 +54,7 @@ mixin Btn (titleText, mod = "")
 	else
 		a(href="#" class="btn " + mod) #{titleText}
 
-mixin sectionTop(title, desc, mod = '')
+mixin sectionTop(title, desc = '', mod = '')
 	.section__top
 		.container
 			.top__row
