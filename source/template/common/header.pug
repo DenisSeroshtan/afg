@@ -1,32 +1,16 @@
 header(style= inlineImg.header_bg).header#js-header
-	.container
-		.header-top
-			.header-top__wrap
-				a(href="#" class="logo__link")
-					+svg("logo__svg","logo")
-				+nav("nav", "Главная")
-				.phone-number +7 (495) 00-99-56
-		.header-mid
-			.header-mid__left
-				.header-mid__wrap
-					h1.header__title Armata Financical Group
-					ul.title__list
-						each value, key in titleList
-							li.title__item
-								a(href=`#js-${key}` class="title__link")= value
-			.header-mid__right
-				form.form
-					each val, key in form
-						div(class="form__"+key)
-							p= val
-					label(class="label")
-						span.label__text Ваше имя:
-						input(name="name" type="text").input
-					label(class="label")
-						span.label__text Ваш телефон:
-						input(name="phone" type="text").input
-					.btn__wrap
-						+Btn("Отправить")
+		+headerTop
+		.container
+			.header-mid
+				.header-mid__left
+					.header-mid__wrap
+						h1.header__title Armata Financical Group
+						ul.title__list
+							each value, key in titleList
+								li.title__item
+									a(href=`#js-${key}` class="title__link")= value
+				.header-mid__right
+					+form
 		a(href="#js-rating" class="header__circle")
 
 

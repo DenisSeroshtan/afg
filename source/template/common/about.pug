@@ -1,15 +1,15 @@
-
-section(style= inlineImg.about_bg).about.s-overlay#js-about
+section.section.about#js-about
 	.container
-		.about__row
-			.about__desc
-				h2.js-h2.s-title королевский салон
-				.s-text !{desc.about}
+		.header-mid.about_row
+			.header-mid__left
+				.about__content
+					h2.top__title= secTitle.about
+					.top__desc= desc.about
+					.about__list
+						each text, svg in aboutItems
+							li.deals__item
+								+svg("deals__svg", svg)
+								.deals__text= text
 
-			div(class= "about__gallery fotorama" )&attributes(dataAttr)
-				- for (var i = 1; i <= 6; i++)
-					a(href=`assets/img/about/foto-${i}.jpg` class="gallery__image")
-						img(src=`assets/img/about/small/foto-${i}.jpg`
-							class="gallery__thumbs"
-							alt="photo_salon")
-
+			.header-mid__right
+				+form('about')

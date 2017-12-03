@@ -49,7 +49,6 @@ var draw = (function(){
   return {
     init: function (obj) {
       var svg = $(obj.svg);
-      var t = svg.data('draw');
       var that = this;
       for(var i = 1; i<=svg.length; i++){
         that.initSvg(i);

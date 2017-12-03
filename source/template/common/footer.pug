@@ -1,13 +1,6 @@
 footer.footer
-	.container
-		.footer__row
-			.footer__logo
-				+logoSvg
-				.footer__about
-					p
-						| Салон красоты бизнес-класса в Москве
-				+socials("header-socials", "footer-socials")
-			+menuNav("header-nav", "header-nav_footer")
-			+contacts("footer-contacts")
-			.footer__map#map
+	.footer__top
+		+headerTop("footer")
+	.footer__bottom
+		a(href="#js-header" class="top__arrow")
 

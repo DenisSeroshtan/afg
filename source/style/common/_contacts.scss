@@ -1,7 +1,7 @@
 .section.contacts {
 	@include wave($pathGreyWave);
 }
-$cardBg: #e5e5e5;
+
 .card__item_white {
 	background-color: $cardBg;
 	border-bottom-color: darken($cardBg, 10%);

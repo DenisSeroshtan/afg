@@ -1,17 +1,5 @@
-//- var star = <i class="fa fa-star"></i>
-section(style = inlineImg.reviews_bg).reviews.s-overlay
-	.container
-		.about__row
-			h2.js-h2.s-title.title__reviews отзывы наших клиентов
-			.reviews__slider.owl-carousel
-				each obj, key in reviews
-					.reviews__item.owl-item
-						.reviews__name= key
-						.reviews__stars
-							+stars(5)
-						each value, attr in obj
-							div(class=`reviews__${attr}`)
-								p= value
+section.section.reviews#js-reviews
+	+sectionTop(secTitle.reviews, desc.reviews)
 
 
 
