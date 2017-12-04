@@ -1,5 +1,19 @@
 section.section.reviews#js-reviews
 	+sectionTop(secTitle.reviews, desc.reviews)
+	.container
+		.slider
+			.slider__wrap
+				ul.slider__list
+					each value, key in reviews
+						li(class='slider__item' + ( (key == "Михаил Алексеевич Потапов") ?  ' '+'active' : ''))
+							div(style= value.photo).card__img.card__img_white.card__item_yellow
+							.card__item-name= key
+							.card__item-occ= value.occ
+							.card__item-text
+								p= value.text
+				.slider__nav
+					.slider__arr.slider__arr-next
+					.slider__arr.slider-arr-prev
 
 
 

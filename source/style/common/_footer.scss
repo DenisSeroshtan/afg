@@ -1,10 +1,9 @@
 .footer {
-	background: $lightBlue;
-	min-height: rem(220px);
+	background: $darkBlue;
 }
 .header-top {
 	&.footer {
-		padding: rem(80px) 0;
+		padding: rem(40px) 0;
 		color: rgba(#fff, .65);
 		.logo__svg {
 			fill: rgba(#fff, .65);
@@ -25,15 +24,18 @@
 	}
 }
 .footer__bottom {
-	background: $darkBlue;
+	background: #1F2B3A;
 	min-height: rem(37px);
-	display: flex;
 }
 .top__arrow {
-	margin: auto;
-	padding: rem(8px);
+	display: flex;
+	width: 100%;
+	min-height: rem(37px);
 	@include icon-pseudo($icon-angle-double-up){
+		margin: auto;
 		font-size: rem(15px);
-		color: rgba(#fff, .65);
+		width:  rem(15px);
+		height: rem(15px);
+		color: #b1b1b1;
 	}
 }

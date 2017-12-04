@@ -3,3 +3,58 @@
 		@include wave($pathWhiteWave)
 	}
 }
+.slider {
+	padding: rem(60px) 0 rem(100px) 0;
+	@include row-flex;
+	justify-content: center;
+}
+.slider__wrap {
+	text-align: center;
+	@include col;
+	@include size(10);
+	position: relative;
+}
+.slider__list {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+.slider__item {
+	position: absolute;
+	background: #e5e5e5;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	&.active {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+	}
+	&.inslide {
+		z-index: 2;
+		width: 100%;
+	}
+}
+.card__item_yellow {
+	border-color: $accent;
+}
+.slider__arr {
+	position: absolute;
+	@include size(1);
+	cursor: pointer;
+	font-size: rem(30px);
+	color: #b1b1b1;
+	top: 0;
+}
+.slider__arr-next {
+	left: 100%;
+	@include icon-pseudo($icon-angle-right) {
+
+	};
+}
+.slider-arr-prev {
+	right: 100%;
+	@include icon-pseudo($icon-angle-left){
+	}
+}
