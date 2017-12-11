@@ -2,10 +2,10 @@
 
 module.exports = [
   // "./source/js/preloader.js",
-  // "./source/js/owl.js",
-  // "./source/js/regex.js",
-  // "./source/js/form.js",
-  // "./source/js/map.js",
+  "./source/js/draw.js",
+  "./source/js/slider.js",
   "./source/js/scroll.js",
-  "./source/js/popup.js"
+  "./source/js/popup.js",
+  "./source/js/form.js"
+
 ];

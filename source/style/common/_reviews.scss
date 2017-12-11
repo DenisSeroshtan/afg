@@ -41,9 +41,9 @@
 }
 .slider__arr {
 	position: absolute;
-	@include size(1);
 	cursor: pointer;
-	font-size: rem(30px);
+	min-width: rem(30px);
+	font-size: rem(40px);
 	color: #b1b1b1;
 	top: 0;
 }
@@ -57,4 +57,27 @@
 	right: 100%;
 	@include icon-pseudo($icon-angle-left){
 	}
+}
+.slider__dots {
+	display: inline-block;
+	margin-top: rem(20px);
+}
+.slider__dots-item {
+	display: inline-block;
+	width: rem(20px);
+	height: rem(20px);
+	border-radius: 50%;
+	background: #ccc;
+	margin-right: rem(10px);
+	&:last-child {
+		margin-right: 0;
+	}
+	&.active {
+		background: $accent;
+	}
+}
+.slider__dots-link {
+	display: block;
+	width: 100%;
+	height: 100%;
 }

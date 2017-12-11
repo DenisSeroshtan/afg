@@ -60,7 +60,7 @@ mixin form(mod= '')
 			+Btn("Отправить")
 mixin svg(className = '', id)
 	svg(class= className)
-		use(xlink:href=`/assets/svg/sprite.svg#${id}`)
+		use(xlink:href=`assets/svg/sprite.svg#${id}`)
 
 mixin hamburger(link)
 	a(href="#"+link).hamburger.hamburger--elastic
@@ -78,7 +78,7 @@ mixin nav(className, activeItem, id,  mod= "")
 
 mixin Btn (titleText, mod = "")
 	if (titleText == "Отправить")
-		button(class= "btn" type="button") #{titleText}
+		button(class= "btn") #{titleText}
 	else
 		a(href="#" class="btn " + mod) #{titleText}
 

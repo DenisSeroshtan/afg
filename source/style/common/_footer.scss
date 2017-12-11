@@ -8,6 +8,9 @@
 		.logo__svg {
 			fill: rgba(#fff, .65);
 		}
+		.nav__item.active {
+			text-decoration: none;
+		}
 		.nav__link {
 			color:  rgba(#fff, .65);
 		}

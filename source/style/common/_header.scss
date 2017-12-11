@@ -31,9 +31,6 @@ $formColor: #97a4b2;
 .header-top__wrap {
 	@include col;
 	@include size(12);
-	@include size-md(9);
-	@include size-sm(11);
-	@include size-xxs(12);
 	display: flex;
 	justify-content: space-between;
 }

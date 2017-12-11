@@ -255,9 +255,9 @@
 //-_-_-_-_-_-_-_-_-_-_-_-_-/popup style/_-_-_-_-_-_-_-_-_-_-_-_-//
 .content .form {
 	z-index: 2000;
-	max-width: 320px;
+	min-width: rem(320px);
 	background-color: rgb(36,51,67);
-	padding: 35px 35px 30px;
+	padding: rem(35px) rem(35px) rem(30px);
 	color: #97a4b2;
 	font-size: .875em;
 	border-bottom: #1A222B 4px solid;
