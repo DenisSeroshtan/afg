@@ -1,6 +1,9 @@
 mixin preloader
 	.preloader
-		.pulse
+		.cssload-thecube
+			-for (let i = 1; i <= 4; i++)
+				div(class = `cssload-cube cssload-c${i}`)
+
 mixin headerTop(mod="")
 	.container
 		div(class='header-top '+mod)

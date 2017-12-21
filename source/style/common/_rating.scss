@@ -256,6 +256,7 @@
 .content .form {
 	z-index: 2000;
 	min-width: rem(320px);
+	max-width: 22rem;
 	background-color: rgb(36,51,67);
 	padding: rem(35px) rem(35px) rem(30px);
 	color: #97a4b2;
