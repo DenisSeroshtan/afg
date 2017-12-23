@@ -153,7 +153,34 @@ var slider = (function () {
 
   }
 })();
+// класс для выравнивания высот элементов
+function EqualHeight (elem) {
+  var _this = this;
+  var maxH = 0;
 
+  _this.elem = document.querySelectorAll(elem);
+
+  _this.init = function () {
+    // сброс стилей на значение по умолчанию
+    for (var i = 0; i<_this.elem.length; i++) {
+      _this.elem[i].style.minHeight = "auto";
+    }
+    // расчет наибольшей высоты
+    for (var i = 0; i<_this.elem.length; i++) {
+      maxH = _this.elem[0].offsetHeight;
+
+      if (_this.elem[i].offsetHeight > maxH) {
+        maxH = _this.elem[i].offsetHeight;
+      }
+      _this.elem[i].style.minHeight = maxH + "px";
+    }
+
+  }
+  _this.init();
+  // изменение высоты элементов при изменение ширины страницы
+  window.addEventListener('resize', _this.init);
+
+}
 (function () {
   if(('.slider').length) {
     slider.init({
@@ -162,5 +189,5 @@ var slider = (function () {
       // duration : 2000
     });
   }
-  $('.slider__item').equalHeights();
+  var equal = new EqualHeight(".slider__item");
 })();

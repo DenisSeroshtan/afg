@@ -28,17 +28,26 @@ function Popup(obj) { // prototype
   this.btnClose = document.querySelector(".modal .close");
   this.trigger = document.querySelectorAll(obj.trigger);
 
-  this.resize = function () {
+  this.resize = function (flag) {
     // расчет высоты overlay по высоте body
     var bH = body.offsetHeight;
-    popup.overlay.style.height = bH + "px";
+
+    if (flag) {
+      popup.overlay.style.height = bH + "px";
+    }else {
+      popup.overlay.style.height = ""
+    }
+
   };
-  popup.resize();
 
   //изменение высоты overlay при изменение размера окна
-  window.onresize = popup.resize;
 
   this.open = function (cont) {
+    popup.resize(true);
+    window.addEventListener('resize', function() {
+      popup.resize(true);
+    });
+
     if (obj.content) {
       cont = document.querySelector(obj.content).innerHTML
     } else if (cont) {
@@ -57,14 +66,23 @@ function Popup(obj) { // prototype
     popup.overlay.classList.add('showed');
     popup.modal.classList.add('showed');
 
-    body.style.overflow = 'hidden';
+    if (obj.fixed) {
+      body.style.overflow = 'hidden';
+    }
 
   };
   this.close = function () {
+
     popup.overlay.classList.remove('showed');
     popup.modal.classList.remove('showed');
     popup.modal.style.top = 0;
-    body.style.overflow = 'visible';
+    body.style.overflow = "";
+
+    popup.resize(false)
+    window.addEventListener('resize', function() {
+      popup.resize(false);
+    });
+
 
   };
   if (obj.auto) {
@@ -95,7 +113,8 @@ function Popup(obj) { // prototype
 }
 var popup = new Popup({
   content: ".header-mid__right",
-  trigger: ".section__bottom .btn"
+  trigger: ".section__bottom .btn",
+  fixed: true
   // auto: true
   // duration: 12000
 });

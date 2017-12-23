@@ -10,7 +10,6 @@
   "private": true,
   "dependencies": {
     "jQuery": "^3.2.1",
-    "equalheights": "https://github.com/neomen/equalHeights.git",
     "jquery-drawsvg": "^1.1.0",
     "normalize-css": "https://github.com/necolas/normalize.css.git#^7.0.0"
   }
