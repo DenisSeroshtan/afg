@@ -2,24 +2,28 @@ window.onload = function() {
   var preloader = document.querySelector('.preloader');
   var anim = document.querySelector('.cssload-thecube');
 
-   function fade (elem, t){
+   function fade (elem, t, callback){
      var op = 1;
      var t = t || 100;
      var step = 0.11;
+     var callback = callback || function(){};
      var timer = setInterval(function () {
        op -= step;
-       if (op < 0) {
+       if (op <= 0) {
          clearInterval(timer);
          elem.style.opacity = 0;
          elem.style.display = "none";
-       }else elem.style.opacity = op;
+
+         callback()
+
+       } else elem.style.opacity = op;
+
      }, t);
    }
-
-  fade(anim, 50);
-  setTimeout(function () {
-    fade(preloader, 100);
-  },800);
+  //animation preloader
+  fade(anim, 50, function() {
+    fade(preloader, 50)
+  });
 };
 
 (function(){
